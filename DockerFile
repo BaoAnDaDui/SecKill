@@ -1,0 +1,7 @@
+FROM openjdk:8
+ADD ./seckill/target/seckill-2.0.0.jar /seckill1.0.0.jar
+ENV LANG C.UTF-8
+ENV JAVA_OPTS=""
+ENV APP_OPTS=""
+EXPOSE 8080
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS  -jar /seckill1.0.0.jar  $APP_OPTS" ]
